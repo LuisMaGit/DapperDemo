@@ -1,0 +1,9 @@
+C:\Users\LuisMa\Desktop\DemoDapper\DemoDapper\bin\Debug\netcoreapp3.1\DemoDapper.deps.json
+C:\Users\LuisMa\Desktop\DemoDapper\DemoDapper\bin\Debug\netcoreapp3.1\DemoDapper.dll
+C:\Users\LuisMa\Desktop\DemoDapper\DemoDapper\bin\Debug\netcoreapp3.1\DemoDapper.pdb
+C:\Users\LuisMa\Desktop\DemoDapper\DemoDapper\obj\Debug\netcoreapp3.1\DemoDapper.csprojAssemblyReference.cache
+C:\Users\LuisMa\Desktop\DemoDapper\DemoDapper\obj\Debug\netcoreapp3.1\DemoDapper.AssemblyInfoInputs.cache
+C:\Users\LuisMa\Desktop\DemoDapper\DemoDapper\obj\Debug\netcoreapp3.1\DemoDapper.AssemblyInfo.cs
+C:\Users\LuisMa\Desktop\DemoDapper\DemoDapper\obj\Debug\netcoreapp3.1\DemoDapper.csproj.CoreCompileInputs.cache
+C:\Users\LuisMa\Desktop\DemoDapper\DemoDapper\obj\Debug\netcoreapp3.1\DemoDapper.dll
+C:\Users\LuisMa\Desktop\DemoDapper\DemoDapper\obj\Debug\netcoreapp3.1\DemoDapper.pdb

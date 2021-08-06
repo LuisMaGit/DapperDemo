@@ -1,0 +1,9 @@
+C:\Users\LuisMa\Desktop\DemoDapper\DataManager\bin\Release\netcoreapp3.1\DataManager.deps.json
+C:\Users\LuisMa\Desktop\DemoDapper\DataManager\bin\Release\netcoreapp3.1\DataManager.dll
+C:\Users\LuisMa\Desktop\DemoDapper\DataManager\bin\Release\netcoreapp3.1\DataManager.pdb
+C:\Users\LuisMa\Desktop\DemoDapper\DataManager\obj\Release\netcoreapp3.1\DataManager.csprojAssemblyReference.cache
+C:\Users\LuisMa\Desktop\DemoDapper\DataManager\obj\Release\netcoreapp3.1\DataManager.AssemblyInfoInputs.cache
+C:\Users\LuisMa\Desktop\DemoDapper\DataManager\obj\Release\netcoreapp3.1\DataManager.AssemblyInfo.cs
+C:\Users\LuisMa\Desktop\DemoDapper\DataManager\obj\Release\netcoreapp3.1\DataManager.csproj.CoreCompileInputs.cache
+C:\Users\LuisMa\Desktop\DemoDapper\DataManager\obj\Release\netcoreapp3.1\DataManager.dll
+C:\Users\LuisMa\Desktop\DemoDapper\DataManager\obj\Release\netcoreapp3.1\DataManager.pdb
