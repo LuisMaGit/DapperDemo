@@ -9,25 +9,28 @@ namespace ConsoleUI.UserInterface.Behaviors
         private readonly ApplicationUiService _appUi;
 
         //Props
-        private bool _isValid;
 
         public SimpleValidationBehavior(ApplicationUiService appUi)
         {
             _appUi = appUi;
         }
 
-        public void ValidationLogic(Action enterValueView, Func<string, bool> validateInput)
+        public string ValidationLogic(Action enterValueView, Func<string, bool> validateInput)
         {
+            bool isValid;
+            string input;
             do
             {
                 enterValueView();
-                var input = _appUi.GetInput();
-                _isValid = validateInput(input);
-                if (!_isValid)
+                input = _appUi.GetInput();
+                isValid = validateInput(input);
+                if (!isValid)
                 {
                     _appUi.InvalidValue();
                 }
-            } while (!_isValid);
+            } while (!isValid);
+
+            return input;
         }
     }
 }

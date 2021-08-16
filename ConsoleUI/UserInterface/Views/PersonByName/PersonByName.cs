@@ -1,7 +1,7 @@
 ﻿using ConsoleUI.UserInterface.Behaviors.SimpleViewBehavior;
 using ConsoleUI.UserInterface.Services.UIProvider;
 
-namespace ConsoleUI.UserInterface.ViewsModels.PersonByName
+namespace ConsoleUI.UserInterface.Views.PersonByName
 {
     public class PersonByName : SimpleViewBehavior
     {

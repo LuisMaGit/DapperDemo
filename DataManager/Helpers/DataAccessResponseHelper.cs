@@ -15,16 +15,11 @@ namespace DataManager.Helpers
             };
         }
 
-        public static DataResponseModel<T> SingleDataResponse<T>(List<T> listData)
+        public static DataResponseModel<T> SingleDataResponse<T>(T data)
         {
-            if (!listData.Any())
-            {
-                return new DataResponseModel<T>();
-            }
-
             return new DataResponseModel<T>
             {
-                Data = listData.First()
+                Data = data
             };
         }
 
@@ -46,6 +41,32 @@ namespace DataManager.Helpers
             return new DataResponseModel<List<T>>
             {
                 Data = listData
+            };
+        }
+
+        public static DataResponseModel<List<T>> HandlePaginationResponse<T, TU>
+            (List<TU> dataPaginated, int page) where TU : IPaginationBaseFields, T
+        {
+            if (!dataPaginated.Any())
+            {
+                return new DataResponseModel<List<T>>();
+            }
+
+            var totalCount = dataPaginated.First().TotalCount;
+            var data = new List<T>();
+            dataPaginated.ForEach(s => data.Add(s));
+            var pages = totalCount % PaginationHelper.SIZE_PAGE == 0
+                ? totalCount / PaginationHelper.SIZE_PAGE
+                : totalCount / PaginationHelper.SIZE_PAGE + 1;
+            return new DataResponseModel<List<T>>
+            {
+                Data = data,
+                Pagination = new PaginationResponseModel
+                {
+                    Pages = pages,
+                    Total = totalCount,
+                    CurrentPage = page,
+                }
             };
         }
     }

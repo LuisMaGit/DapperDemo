@@ -35,6 +35,8 @@ namespace ConsoleUI.UserInterface.Services
             _uiProvider.WriteLineProvider("Loading...");
         }
 
+        public void EnterAnId() => _uiProvider.WriteProvider("Enter Id: ");
+
         public void OkResponse(object value) => _uiProvider.WriteLineProvider($"Data: {value}");
 
         public void OkListResponse<T>(IEnumerable<T> list)
@@ -45,9 +47,9 @@ namespace ConsoleUI.UserInterface.Services
                 _uiProvider.WriteLineProvider(item);
             }
         }
-        
+
         public void EmptyResponse() => _uiProvider.WriteLineProvider("No data");
-        
+
         public void ErrorResponse(object value) => _uiProvider.WriteLineProvider($"Error: {value}");
         public string GetInput() => _uiProvider.InputProvider();
     }

@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using ConsoleUI.UserInterface.ViewsModels.Home;
+using ConsoleUI.UserInterface.Views.Home;
 
 namespace ConsoleUI
 {

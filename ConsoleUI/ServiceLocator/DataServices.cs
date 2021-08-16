@@ -1,5 +1,5 @@
 ﻿using DataManager.DataAccess;
-using DataManager.DataAccess.Persons;
+using DataManager.DataAccess.PersonServices;
 using DataManager.Helpers;
 using Microsoft.Extensions.DependencyInjection;
 

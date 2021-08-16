@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace ConsoleUI.UserInterface.ViewsModels.Home
+namespace ConsoleUI.UserInterface.Views.Home
 {
     public class ActionBook
     {

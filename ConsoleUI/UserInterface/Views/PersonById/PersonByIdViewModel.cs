@@ -3,29 +3,26 @@ using ConsoleUI.UserInterface.Behaviors;
 using ConsoleUI.UserInterface.Behaviors.SimpleViewBehavior;
 using ConsoleUI.UserInterface.Helpers;
 using ConsoleUI.UserInterface.Services;
-using DataManager.DataAccess.Persons;
+using DataManager.DataAccess.PersonServices;
 
-namespace ConsoleUI.UserInterface.ViewsModels.PersonById
+namespace ConsoleUI.UserInterface.Views.PersonById
 {
     public class PersonByIdViewModel : SimpleViewModelBehavior<PersonById>
     {
         //Services
         private readonly IPersonService _personService;
-        private readonly ResponseBehaviors _responseBehaviors;
-
         //Props
         private int _id;
         
         public PersonByIdViewModel(
             ApplicationUiService appUi,
-            ResponseBehaviors behaviors,
+            ResponseBehaviors responseBehaviors,
             SimpleValidationBehavior validationBehavior,
             PersonById view,
             IPersonService personService)
-            : base(appUi, validationBehavior, view)
+            : base(appUi, validationBehavior, view, responseBehaviors)
         {
             _personService = personService;
-            _responseBehaviors = behaviors;
         }
 
         protected override bool ValidateInput(string input)
@@ -36,7 +33,7 @@ namespace ConsoleUI.UserInterface.ViewsModels.PersonById
         protected override async Task RunServiceLogic()
         {
             var response = await _personService.GetPersonsByIdAsync(_id);
-            _responseBehaviors.HandleSingleDataResponse(response);
+            ResponseBehaviors.HandleSingleDataResponse(response);
         }
     }
 }

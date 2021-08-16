@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using ConsoleUI.UserInterface.Services;
 using DataManager.Domain;
@@ -14,10 +15,10 @@ namespace ConsoleUI.UserInterface.Behaviors
             _appUi = appUi;
         }
 
-        private static string _ErrorStr(string[] errors)
+        private static string _ErrorStr(IReadOnlyList<string> errors)
         {
             var output = "";
-            for (var i = 0; i < errors.Length; i++)
+            for (var i = 0; i < errors.Count; i++)
             {
                 output += errors[i] + (i != 0 ? "\n" : "");
             }
@@ -25,43 +26,44 @@ namespace ConsoleUI.UserInterface.Behaviors
             return output;
         }
 
-        private bool _HandleResponseErros(string[] errors)
+        private bool _HandleResponseErros(IReadOnlyList<string> errors)
         {
             if (!errors.Any()) return false;
             _appUi.ErrorResponse(_ErrorStr(errors));
             return true;
         }
 
-        public void HandleSingleDataResponse<T>(DataResponseModel<T> response)
+        public bool HandleSingleDataResponse<T>(DataResponseModel<T> response)
         {
             if (_HandleResponseErros(response.Errors))
             {
-                return;
+                return false;
             }
 
             if (response.Data == null)
             {
                 _appUi.EmptyResponse();
-                return;
+                return false;
             }
-
             _appUi.OkResponse(response.Data);
+            return true;
         }
 
-        public void HandleListDataResponse<T>(DataResponseModel<List<T>> response)
+        public bool HandleListDataResponse<T>(DataResponseModel<List<T>> response)
         {
             if (_HandleResponseErros(response.Errors))
             {
-                return;
+                return false;
             }
 
             if (response.Data == null || !response.Data.Any())
             {
                 _appUi.EmptyResponse();
-                return;
+                return false;
             }
 
             _appUi.OkListResponse(response.Data);
+            return true;
         }
     }
 }

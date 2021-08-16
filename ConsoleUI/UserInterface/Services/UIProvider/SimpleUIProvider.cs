@@ -19,4 +19,5 @@ namespace ConsoleUI.UserInterface.Services.UIProvider
             return Console.ReadLine();
         }
     }
+
 }

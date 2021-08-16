@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Dapper;
@@ -23,9 +24,10 @@ namespace DataManager.DataAccess
             return data.ToList();
         }
 
-        public Task<bool> SaveData<T>(string query, T parameters)
+        public async Task SaveData<T>(string query, T parameters)
         {
-            throw new System.NotImplementedException();
+            await using var connection = new SqliteConnection(_connstr);
+            await connection.ExecuteAsync(query, parameters);
         }
     }
 }

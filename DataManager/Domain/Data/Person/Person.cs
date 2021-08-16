@@ -1,4 +1,4 @@
-namespace DataManager.Domain.Data
+namespace DataManager.Domain.Data.Person
 {
     public class Person
     {
@@ -20,7 +20,5 @@ namespace DataManager.Domain.Data
                    $" {nameof(Email)}: {Email}," +
                    $" {nameof(Phone)}: {Phone}";
         }
-        
-
     }
 }

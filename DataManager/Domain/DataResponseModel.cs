@@ -6,6 +6,7 @@ namespace DataManager.Domain
     {
         public T Data { get; set; }
         public string[] Errors { get; set; } = { };
-        
+
+        public PaginationResponseModel Pagination { get; set; }
     }
 }
