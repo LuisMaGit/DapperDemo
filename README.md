@@ -1,4 +1,4 @@
-# DapperDemo
+# Console app Dapper demo
 ## A net core 3 console app with fundamentals DB (SQLite) operations using Dapper
 
 ## Packages used:
